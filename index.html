@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iGrid | Sustainability Experts</title>
+    <link rel="icon" href="image/cropped-battery.icon_.circle.png" type="image/png">
+    <!-- Add Open Sans font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Share+Tech&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="main-header">
+        <!-- Top Blue Bar with Contact Info -->
+        <div class="header-top-contact-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <a href="tel:(02)83130430"><i class="fas fa-phone icon-fa"></i> (02) 8313 0430</a>
+                    <a href="mailto:contact@igrid.io"><i class="fas fa-envelope icon-fa"></i> contact@igrid.io</a>
+                </div>
+                <!-- Potentially other elements like social media icons could go here on the right -->
+            </div>
+        </div>
+        <!-- Main Navigation Bar (White) -->
+        <nav class="main-navigation-bar">
+            <!-- ADDED the .container div back here -->
+            <div class="container">
+                <div class="nav-bar-content">
+                    <a href="https://igrid.io/" class="logo">
+                        <img src="image/IGRID_Transparent.webp" alt="iGrid Logo">
+                    </a>
+                    <ul class="nav-links">
+                        <li><a href="https://igrid.io/">Home</a></li>
+                        <li><a href="https://grafana.igrid.io/login" target="_blank">IoT Portal</a></li>
+                        <li><a href="https://files.igrid.io/" target="_blank">Files</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+            <!-- /ADDED the .container div back here -->
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Your In House</h1>
+			<h1><span id="rotating-text">24/7 Support Team.</span></h1>
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section id="what-we-do" class="section-padding">
+        <div class="container">
+            <h2>WHAT WE DO</h2>
+            <div class="what-we-do-grid">
+                <div class="service-item">
+                    <img src="image/sustainability.64px.png" alt="Sustainability Consulting">
+                    <p>Sustainability Consulting</p>
+                </div>
+                <div class="service-item">
+                    <img src="image/energystorage.64px.png" alt="Energy Storage">
+                    <p>Energy Storage</p>
+                </div>
+                <div class="service-item">
+                    <img src="image/operations.64px.png" alt="Asset Management">
+                    <p>Asset Management</p>
+                </div>
+                <div class="service-item">
+                    <img src="image/recycle.64px.png" alt="PV & Battery Recycling">
+                    <p>PV & Battery Recycling</p>
+                </div>
+                <div class="service-item">
+                    <img src="image/iot.64px.png" alt="Data Acquisition & IOT">
+                    <p>Data Acquisition & IOT</p>
+                </div>
+                <div class="service-item">
+                    <img src="image/247.64px.png" alt="24/7 Operations Support">
+                    <p>24/7 Operations Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Some of Our Customers Section -->
+    <section id="customers" class="section-padding">
+        <div class="container">
+            <h2>SOME OF OUR CUSTOMERS</h2>
+            <div class="carousel-container">
+                <button class="carousel-button prev" aria-label="Previous Customer">&lt;</button>
+                <div class="carousel-track-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide"><img src="image/clc.webp" alt="Climate Leaders Coalition"></div>
+                        <div class="carousel-slide"><img src="image/agl_logo_vertical_cmyk.webp" alt="AGL"></div>
+                        <div class="carousel-slide"><img src="image/suncable.webp" alt="Suncable"></div>
+                        <div class="carousel-slide"><img src="image/santos-137583-companylogo.webp" alt="Santos"></div>
+                        <div class="carousel-slide"><img src="image/Sun-Store-Aus-Logo.webp" alt="Sun Store Aus"></div>
+                        <!-- Add duplicates if needed for infinite loop effect with JS -->
+                    </div>
+                </div>
+                <button class="carousel-button next" aria-label="Next Customer">&gt;</button>
+            </div>
+            <div class="carousel-dots">
+                <!-- Dots will be generated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Get in Touch Section -->
+    <section id="contact" class="section-padding">
+        <div class="container contact-grid">
+            <div class="contact-form-container">
+                <h2>Get in touch:</h2>
+                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+					<input type="hidden" id="key" name="access_key" value="fe7027e4-d54d-4a54-9b86-579a3fa1cf73">
+                    <div class="form-row"> <!-- Wrap name and email in a row -->
+                        <div class="form-group name-group">
+                            <label for="name">Name</label>
+                            <div class="form-field-line"> <!-- Wrap input for the line -->
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                        </div>
+                        <div class="form-group email-group">
+                            <label for="email">Email Address</label>
+                             <div class="form-field-line"> <!-- Wrap input for the line -->
+                                 <input type="email" id="email" name="email" required>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="form-group message-group">
+                        <label for="message">Message</label>
+                         <div class="form-field-line"> <!-- Wrap textarea for the line -->
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                         </div>
+                    </div>
+					<!-- Honeypot Spam Protection -->
+					<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    <button type="submit" class="btn">LET'S CHAT</button>
+                </form>
+            </div>
+            <!-- Wrap contact details in a container -->
+            <div class="contact-details-container">
+				<div class="contact-detail-item">
+					<i class="fas fa-map-marker-alt icon-fa"></i>
+					<div> <!-- Wrap text content -->
+						<strong>Office</strong>
+						<p>Sydney, NSW, 2039</p>
+					</div>
+				</div>
+				<div class="contact-detail-item">
+					<i class="fas fa-phone icon-fa"></i>
+					<div> <!-- Wrap text content -->
+						<strong>Call Us</strong>
+						<p>(02) 8313 0430</p>
+					</div>
+				</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 iGrid Pty Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script data-goatcounter="https://igrid.goatcounter.com/count"
+	    async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
