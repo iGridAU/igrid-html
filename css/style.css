@@ -1,17 +1,23 @@
 /* --- Global Styles & Variables --- */
 :root {
-    --main-color: #125B8C;
-    --main-color-rgb: 18, 91, 140; /* For RGBA usage */
-    --text-light: #ffffff;
-    --text-dark: #333333;
-    /*--section-bg-light: #f8f9fa;*/
-    --font-family-primary: 'Share Tech', sans-serif; /* Primary font for headings, hero, service items */
-    --font-family-secondary: 'Open Sans', Arial, sans-serif; /* Secondary font for body text, navigation, contact details */
-    --header-top-bar-height: 25px; /* Estimate top bar height */
-    --header-nav-bar-height: 80px; /* Estimate nav bar height */
-    --header-height: calc(var(--header-top-bar-height) + var(--header-nav-bar-height)); /* Combined height */
-    --container-max-width: 1100px; /* Define container max width as variable */
-    --container-padding: 15px; /* Define container padding as variable */
+    --bg-primary: #0B1120;
+    --bg-surface: #151E32;
+    --bg-surface-hover: #1e2a47;
+    --accent-cyan: #06B6D4;
+    --accent-blue: #125B8C;
+    --accent-blue-light: #1a7ab8;
+    --text-heading: #F1F5F9;
+    --text-body: #94A3B8;
+    --text-muted: #64748B;
+    --border-subtle: rgba(148, 163, 184, 0.15);
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --header-height: 72px;
+    --container-max-width: 1200px;
+    --container-padding: 24px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
 }
 
 * {
@@ -25,794 +31,861 @@ html {
 }
 
 body {
-    font-family: var(--font-family-secondary); /* Default body font is Open Sans */
-    line-height: 1.6;
-    color: var(--text-dark);
-    padding-top: var(--header-height); /* Account for fixed header */
+    font-family: var(--font-body);
     font-weight: 400;
-    overflow-x: hidden; /* Prevent horizontal scroll issues, common with carousels */
+    line-height: 1.6;
+    color: var(--text-body);
+    background-color: var(--bg-primary);
+    overflow-x: hidden;
 }
 
 .container {
-    width: 90%; /* Keep width 90% of parent until max-width */
-    max-width: var(--container-max-width); /* Limit max width */
-    margin: 0 auto; /* Center the container itself */
-    padding: 0 var(--container-padding); /* Add padding inside the container */
-    /* This container is now used correctly inside both header bars and main sections */
+    width: 92%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
 }
 
-h1, h2 {
-    font-family: var(--font-family-primary); /* Headings use Share Tech */
-    margin-bottom: 20px;
-    text-align: center;
-    font-weight: 400;
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: var(--text-heading);
+    line-height: 1.2;
+    margin-bottom: 16px;
 }
 
-h2 {
-    font-size: 2.5rem;
-    color: var(--text-dark);
-    text-transform: uppercase;
+h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
+
+p {
+    margin-bottom: 16px;
 }
 
+a {
+    color: var(--accent-cyan);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--text-heading);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
 .section-padding {
     padding: 60px 0;
 }
 
-
-.btn {
-    display: inline-block;
-    background-color: var(--main-color);
-	font-weight: 400;
-    color: var(--text-light);
-    padding: 12px 25px;
-    text-decoration: none;
-    /* border-radius will be adjusted per button */
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: var(--font-family-primary); /* Button text uses Share Tech */
-}
-
-.btn:hover {
-    background-color: #0e4a70; /* Darker shade of main color */
-}
-
-
-/* Style for Font Awesome icons */
-.icon-fa {
-    margin-right: 8px;
-    /* vertical-align: middle; */
-}
-
-/* Adjusting icon size in header top bar */
-.header-top-contact-bar .contact-info a .icon-fa {
-    font-size: 0.8em;
-    vertical-align: middle;
-}
-
-/* Adjusting icon size in contact section */
-.contact-detail-item .icon-fa {
-    font-size: 24px;
-    /* margin-right is set below */
-    color: var(--text-light);
-    width: 30px;
+.section-header {
     text-align: center;
-    display: flex;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+.section-tag {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-cyan);
+    margin-bottom: 12px;
+    padding: 6px 14px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 100px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    gap: 8px;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 14px 32px;
+    border-radius: 100px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(6, 182, 212, 0.25);
+}
 
-/* --- Header --- */
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(6, 182, 212, 0.4);
+    color: #fff;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-heading);
+    border: 1px solid var(--border-subtle);
+}
+
+.btn-secondary:hover {
+    background: var(--bg-surface);
+    border-color: var(--accent-cyan);
+    color: var(--accent-cyan);
+    transform: translateY(-2px);
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Header */
 #main-header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Header itself spans full width */
+    width: 100%;
     z-index: 1000;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-.header-top-contact-bar {
-    background-color: var(--main-color);
-    color: var(--text-light);
-    padding: 4px 0; /* Vertical padding */
-    font-size: 0.8em;
-    min-height: var(--header-top-bar-height);
-    display: flex;
-    align-items: center;
-    /* The .container inside handles horizontal alignment */
-}
-.header-top-contact-bar .container {
-    display: flex; /* Apply flex to container inside */
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    /* The standard .container styles handle its width, centering, and internal padding */
-}
-.header-top-contact-bar .contact-info a {
-    color: var(--text-light);
-    text-decoration: none;
-    margin-right: 20px;
-    transition: opacity 0.3s ease;
-    white-space: nowrap;
-    font-family: var(--font-family-secondary); /* Use Open Sans */
-}
-.header-top-contact-bar .contact-info a:last-child {
-    margin-right: 0;
-}
-.header-top-contact-bar .contact-info a:hover {
-    opacity: 0.8;
+#main-header.scrolled {
+    background-color: rgba(11, 17, 32, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.3);
 }
 
 .main-navigation-bar {
-     background-color: var(--text-light);
-     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-     min-height: var(--header-nav-bar-height);
-     display: flex; /* Used to vertically center the .container inside */
-     align-items: center; /* Vertically center the .container */
-     position: relative; /* Added relative positioning for absolute menu */
-     /* The .container inside handles horizontal alignment */
-}
-
-.main-navigation-bar .container {
-    /* This container has the standard styles (width, max-width, margin, padding) */
-    /* Its contents (.nav-bar-content) will be aligned by flexbox */
+    min-height: var(--header-height);
+    display: flex;
+    align-items: center;
 }
 
 .nav-bar-content {
-    display: flex; /* Apply flex here to layout logo/links/toggle */
-    justify-content: space-between; /* Space between logo and nav/toggle */
-    align-items: center; /* Vertically center items within this flex container */
-    width: 100%; /* Takes full width of its parent (.container) */
-    /* REMOVE max-width, margin, padding from here - handled by parent .container */
-    /* max-width: var(--container-max-width); */
-    /* margin: 0 auto; */
-    /* padding: 0 var(--container-padding); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .logo img {
-    height: 45px;
+    height: 40px;
     width: auto;
-    display: block;
+    filter: brightness(0) invert(1);
 }
 
 .nav-links {
     list-style: none;
-    display: flex; /* Desktop: horizontal flex */
+    display: flex;
+    align-items: center;
+    gap: 8px;
     margin: 0;
     padding: 0;
-    align-items: center;
-}
-
-.nav-links li {
-    margin-left: 25px;
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: var(--text-dark);
-    font-weight: 400;
-    transition: color 0.3s ease;
-    padding: 10px 0;
-    display: block;
-    font-family: var(--font-family-secondary); /* Use Open Sans */
+    color: var(--text-body);
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 100px;
+    transition: all 0.3s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--main-color);
+    color: var(--text-heading);
+    background: var(--bg-surface);
+}
+
+.nav-links .nav-cta {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+    color: #fff !important;
+}
+
+.nav-links .nav-cta:hover {
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+    transform: translateY(-1px);
 }
 
 .mobile-menu-toggle {
-    display: none; /* Hidden on desktop */
+    display: none;
     background: none;
     border: none;
     cursor: pointer;
     padding: 10px;
-    position: relative;
-    z-index: 1001; /* Ensure toggle is clickable */
+    z-index: 1001;
 }
+
 .mobile-menu-toggle span {
     display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-dark);
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-heading);
     margin: 5px 0;
     transition: all 0.3s ease-in-out;
+    border-radius: 2px;
 }
 
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
 
-/* --- Hero Section --- */
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Hero */
 #hero {
-    background: linear-gradient(rgba(var(--main-color-rgb), 0.65), rgba(var(--main-color-rgb), 0.65)), url('../image/energy.storage.facility-.webp') no-repeat center center/cover;
-    height: calc(70vh - var(--header-height));
-    min-height: 400px;
+    position: relative;
+    min-height: 100vh;
     display: flex;
-    font-family: var(--font-family-primary); /* Hero text uses Share Tech */
-	font-size: 2.5rem;
-	font-weight: 400;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--text-light);
-    padding: 20px;
+    padding: 120px 20px 80px;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(11, 17, 32, 0.85), rgba(11, 17, 32, 0.92)), url('../image/energy.storage.facility-.webp') no-repeat center center/cover;
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+}
+
+.hero-subtitle {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent-cyan);
+    margin-bottom: 20px;
 }
 
 #hero h1 {
-    font-size: 5rem;
-    font-weight: 400;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-	padding: 0;
-	margin: 0;
-    font-family: var(--font-family-primary); /* Ensure h1 specifically uses Share Tech */
+    margin-bottom: 8px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
 }
+
 #hero h1 span#rotating-text {
     display: inline-block;
-    transition: opacity 0.3s ease-in-out;
+    white-space: nowrap;
+    background: linear-gradient(135deg, var(--accent-cyan), #22d3ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: opacity 0.4s ease-in-out;
 }
 
-
-/* --- What We Do Section --- */
-#what-we-do {
-    /* background-color: #f8f8f8; */
+.hero-cta {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
-#what-we-do h2 {
-    margin-bottom: 40px;
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 40px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 12px;
 }
 
-.what-we-do-grid {
+.scroll-indicator span {
+    display: block;
+    width: 4px;
+    height: 8px;
+    background: var(--accent-cyan);
+    border-radius: 2px;
+    margin: 8px auto 0;
+    animation: scrollBounce 2s infinite;
+}
+
+@keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(10px); opacity: 0.3; }
+}
+
+/* Stats */
+#stats {
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 60px 0;
+}
+
+.stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     text-align: center;
 }
 
-.service-item {
+.stat-item {
     padding: 20px;
-    border-radius: 8px;
-    font-family: var(--font-family-primary); /* Service items use Share Tech */
 }
 
-.service-item img {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 15px;
+.stat-number {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-weight: 700;
+    color: var(--text-heading);
+    line-height: 1;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, var(--accent-cyan), #22d3ee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* BESS Lifecycle */
+#bess-lifecycle {
+    background: var(--bg-primary);
+    padding: 100px 0;
+}
+
+.lifecycle-grid {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+}
+
+.lifecycle-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 32px 24px;
+    text-align: center;
+    flex: 1;
+    min-width: 160px;
+    max-width: 220px;
+    margin: 8px;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.lifecycle-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 20px 40px rgba(6, 182, 212, 0.1);
+}
+
+.lifecycle-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 16px;
+    background: rgba(6, 182, 212, 0.1);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--accent-cyan);
+}
+
+.lifecycle-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.lifecycle-card p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    margin-bottom: 0;
+}
+
+.lifecycle-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-cyan);
+    font-size: 1rem;
+    padding: 0 4px;
+    opacity: 0.6;
+}
+
+/* What We Do */
+#what-we-do {
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-surface) 100%);
+}
+
+.what-we-do-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.service-item {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 20px 40px rgba(6, 182, 212, 0.08);
+}
+
+.service-item.primary {
+    background: linear-gradient(135deg, var(--bg-surface) 0%, rgba(6, 182, 212, 0.08) 100%);
+    border-color: rgba(6, 182, 212, 0.3);
+}
+
+.service-icon-wrap {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: rgba(6, 182, 212, 0.08);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-icon-wrap img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+.service-item h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
 }
 
 .service-item p {
-    font-weight: 400;
-    color: var(--text-dark);
-    font-size: 1.5em;
-    font-family: var(--font-family-primary); /* Service item text uses Share Tech */
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+    line-height: 1.5;
 }
 
-
-/* --- Customers Section --- */
+/* Customers / Marquee */
 #customers {
-    /* Override the padding-top from .section-padding */
-    padding-top: 0;
-}
-#customers h2 {
-    margin-bottom: 60px;
+    background: var(--bg-surface);
 }
 
-.carousel-container {
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
+.marquee-container {
     overflow: hidden;
-    padding: 0 30px;
+    width: 100%;
+    padding: 20px 0;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-.carousel-track {
+.marquee-track {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: fit-content; /* Allow track to be wider than container */
+    width: max-content;
+    animation: marqueeScroll 30s linear infinite;
 }
 
-.carousel-slide {
-    min-width: calc(100% / 3);
-    flex-shrink: 0;
-    padding: 0 15px;
+.marquee-item {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    padding: 0 50px;
+    min-width: 200px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
 }
 
-.carousel-slide img {
-    max-width: 150px;
-    max-height: 100px;
-    object-fit: contain;
-    /*filter: grayscale(100%);*/
-    opacity: 0.7;
-    transition: filter 0.3s ease, opacity 0.3s ease;
-    display: block;
-}
-.carousel-slide img:hover {
-    filter: grayscale(0%);
+.marquee-item:hover {
     opacity: 1;
 }
 
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.3);
-    color: white;
-    border: none;
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    z-index: 10;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 1;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-.carousel-button:hover {
-    background-color: rgba(0,0,0,0.5);
-    transform: translateY(-50%) scale(1.1);
+.marquee-item img {
+    max-height: 60px;
+    max-width: 160px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
-.carousel-button.prev { left: 0; }
-.carousel-button.next { right: 0; }
-
-.carousel-dots {
-    text-align: center;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
-.carousel-dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: #ccc;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border: none;
-    padding: 0;
-}
-
-.carousel-dot.active {
-    background-color: var(--main-color);
-    transform: scale(1.2);
-}
-
-
-/* --- Get in Touch Section --- */
+/* Contact */
 #contact {
-	background: linear-gradient(90deg,rgba(18,91,140,0.97) 0%,rgba(18,91,140,0.52) 100%), url('../image/lower_background.webp') no-repeat center center/cover;
-    color: var(--text-light);
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-surface) 100%);
 }
 
 #contact h2 {
-    color: var(--text-light);
-    text-align: left; /* Keep form heading left aligned */
-    font-weight: 400;
-    margin-bottom: 30px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.contact-intro {
+    color: var(--text-muted);
+    margin-bottom: 40px;
 }
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* Form takes more space */
-    gap: 40px;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 80px;
+    align-items: start;
 }
 
-.contact-form-container {
-    /* Keep this block */
-}
-
-/* New styles for form layout */
 .form-row {
-    display: flex;
-    gap: 30px; /* Space between Name and Email */
-    margin-bottom: 20px; /* Space between Name/Email row and Message */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
 }
 
 .form-group {
-    margin-bottom: 0; /* Reset default margin as spacing is handled by form-row and button margin */
-    flex: 1; /* Make form groups within form-row take equal space */
+    margin-bottom: 24px;
 }
-/* Specific bottom margin for the message group to space it from the button */
-.form-group.message-group {
-    margin-bottom: 30px;
-    flex: none; /* Ensure message group doesn't take flex space from form-row */
-}
-
 
 .form-group label {
     display: block;
-    margin-bottom: 5px; /* Space between label and the input line */
-    font-weight: 400;
-    font-size: 1.1em;
-    font-family: var(--font-family-primary); /* Form labels use Share Tech */
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
 }
 
-/* Styles for the line under the input/textarea */
-.form-field-line {
-    border-bottom: 1px solid rgba(255,255,255,0.5); /* Thin white line */
-    padding-bottom: 8px; /* Space between input/textarea and the line */
-    margin-top: 5px; /* Space between label and the line */
-    display: flex; /* Use flex to align input/textarea within the line container */
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
+.form-group input,
 .form-group textarea {
-    width: 100%; /* Take full width of parent flex item */
-    padding: 0; /* Remove padding inside the input/textarea as padding is on .form-field-line */
-    border: none; /* Remove default border */
-    background: none; /* Remove default background */
-    color: var(--text-light); /* Text color is light */
-    font-family: var(--font-family-primary); /* Form inputs use Share Tech */
-    font-weight: 400;
-    font-size: 1.1em; /* Match label font size */
-    flex-grow: 1; /* Allow input/textarea to grow within the flex container */
-}
-/* Remove default browser focus outlines and shadows */
-.form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    box-shadow: none;
+    width: 100%;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    color: var(--text-heading);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Style placeholder text */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.1);
+}
+
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: rgba(255,255,255,0.7); /* Lighter white color for placeholder */
-    opacity: 1; /* Ensure opacity is not reduced by default user agent styles */
+    color: var(--text-muted);
+    opacity: 0.7;
 }
-
 
 .form-group textarea {
     resize: vertical;
+    min-height: 140px;
 }
 
-#contact .btn {
-    background-color: var(--text-light);
-    color: var(--main-color);
-    border: 2px solid var(--main-color);
-    font-size: 1.1em;
-    padding: 12px 30px;
-    border-radius: 30px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-family: var(--font-family-primary); /* Button text uses Share Tech */
-}
-#contact .btn:hover {
-    background-color: var(--main-color);
-    color: var(--text-light);
-}
-
-
-/* Styling for the container holding contact details */
 .contact-details-container {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center items vertically within the container */
-    padding-left: 40px; /* Space from the left edge / potential separator */
-    /*border-left: 1px solid rgba(255,255,255,0.3); /* Vertical separator line */
-    height: 100%; /* Ensure it takes up height to allow centering */
-    width: 100%; /* Take full width of grid column */
-    align-items: flex-start; /* Align the whole block of items to the left */
+    gap: 28px;
+    padding-top: 20px;
 }
-
 
 .contact-detail-item {
-    display: flex; /* Use flexbox for icon and text layout */
-    align-items: center; /* Vertically align icon and text */
-    margin-bottom: 25px;
-    justify-content: flex-start; /* Align icon and text block to the left */
-    width: 100%; /* Ensure item takes full width for space-between to work */
-}
-.contact-detail-item:last-child {
-    margin-bottom: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
 }
 
-/* Space between icon and text content */
-.contact-detail-item .icon-fa {
-     margin-right: 15px; /* Keep space between icon and text block */
-}
-
-
-/* Container for the text next to the icon */
-.contact-detail-item div {
-    text-align: left; /* Align text inside this div to the left */
-    /* flex-grow: 1; */ /* Removed flex-grow here, let text take natural width */
+.contact-icon-wrap {
+    width: 48px;
+    height: 48px;
+    background: rgba(6, 182, 212, 0.1);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-cyan);
+    font-size: 1.1rem;
+    flex-shrink: 0;
 }
 
 .contact-detail-item strong {
     display: block;
-    font-size: 1.2em;
-    font-weight: 400;
-    margin-bottom: 2px;
-    font-family: var(--font-family-secondary); /* Use Open Sans */
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    margin-bottom: 4px;
 }
+
 .contact-detail-item p {
     margin: 0;
-    font-size: 1.1em;
-    font-weight: 400;
-    font-family: var(--font-family-secondary); /* Use Open Sans */
+    font-size: 0.95rem;
+    color: var(--text-body);
 }
 
-/* --- Footer --- */
+/* Footer */
 footer {
-    background-color: #333;
-    color: #ccc;
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 60px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    padding-bottom: 40px;
+}
+
+.footer-brand img {
+    height: 36px;
+    margin-bottom: 16px;
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+}
+
+.footer-brand p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    max-width: 300px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 60px;
+}
+
+.footer-col h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    color: var(--text-heading);
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col li {
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: var(--accent-cyan);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-subtle);
+    padding: 20px 0;
     text-align: center;
-    padding: 4px 0;
-    font-size: 0.9em;
-    font-family: var(--font-family-secondary); /* Footer text uses Open Sans */
 }
 
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
 
-/* --- Responsive Adjustments --- */
-/* Desktop styles are default */
-
+/* Responsive */
 @media (max-width: 992px) {
-     :root {
-         --header-nav-bar-height: 60px;
-         --header-height: calc(var(--header-top-bar-height) + var(--header-nav-bar-height));
-     }
-     body {
-         padding-top: var(--header-height);
-     }
-
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
     .what-we-do-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
-
+    
+    .service-item.primary {
+        grid-column: span 2;
+    }
+    
     .contact-grid {
-        grid-template-columns: 1fr; /* Stack form and details */
-        gap: 30px;
+        grid-template-columns: 1fr;
+        gap: 50px;
     }
-
-    /* Adjust form layout on smaller screens */
-    .form-row {
-        flex-direction: column; /* Stack name and email */
-        gap: 20px; /* Space between stacked fields */
-    }
-     .form-row .form-group {
-         flex: none; /* Remove flex-basis */
-         width: 100%; /* Take full width */
-     }
-    .form-group.message-group {
-         margin-bottom: 30px; /* Keep space before button */
-    }
-
+    
     .contact-details-container {
-        padding-top: 20px; /* Add some space above details when stacked */
-        align-items: center; /* Center the whole block of items horizontally */
-        padding-left: 0; /* Remove left padding */
-        border-left: none; /* Remove vertical separator line */
-        /* text-align is now handled per item when stacked */
+        padding-top: 0;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
-     .contact-detail-item {
-        justify-content: center; /* Center items within contact-detail-item */
-         margin-bottom: 20px;
-         flex-direction: column; /* Stack icon and text */
-         align-items: center; /* Center icon and text when stacked */
-         width: auto; /* Allow width to shrink when stacked */
-     }
-     .contact-detail-item .icon-fa {
-         margin-right: 0; /* Remove right margin when stacked */
-         margin-bottom: 8px; /* Add bottom margin below icon */
-     }
-    .contact-detail-item div {
-         text-align: center; /* Center text when stacked */
-         flex-grow: none; /* Don't grow when stacked */
+    
+    .contact-detail-item {
+        flex: 1;
+        min-width: 200px;
     }
-     .contact-detail-item:last-child {
-         margin-bottom: 0;
-     }
-    #contact h2 {
-        text-align: center;
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
-    .carousel-slide {
-        min-width: calc(100% / 2);
-        /* --- CHANGE 1: Increase max-width for tablet (<= 992px) --- */
-        max-width: calc(100% / 2); /* Limit slide width */
+    
+    .footer-links {
+        gap: 40px;
     }
-     .carousel-slide img {
-         /* --- CHANGE 2: Increase max-width for tablet (<= 992px) --- */
-         max-width: 180px; /* Allowing images to be larger */
-         max-height: 120px; /* Optionally allow taller images too */
-     }
-    .carousel-button {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
+    
+    .lifecycle-grid {
+        gap: 16px;
+    }
+    
+    .lifecycle-card {
+        min-width: 200px;
+        max-width: none;
+        flex: 1 1 calc(33% - 16px);
+    }
+    
+    .lifecycle-arrow {
+        display: none;
     }
 }
-
 
 @media (max-width: 768px) {
     :root {
-        --header-top-bar-height: 20px;
-        --header-nav-bar-height: 50px;
-        --header-height: calc(var(--header-top-bar-height) + var(--header-nav-bar-height));
+        --header-height: 64px;
+        --container-padding: 16px;
     }
-    body {
-        padding-top: var(--header-height);
+    
+    .section-padding {
+        padding: 60px 0;
     }
-
-    .header-top-contact-bar {
-        font-size: 0.8em;
-        padding: 4px 0;
-    }
-    .header-top-contact-bar .container {
-        justify-content: center;
-         flex-direction: column;
-         align-items: center;
-    }
-    .header-top-contact-bar .contact-info a {
-        margin-right: 0;
-        margin-bottom: 4px;
-    }
-     .header-top-contact-bar .contact-info a:last-child {
-         margin-bottom: 0;
-     }
-
-    .main-navigation-bar {
-        position: relative;
-        /* box-shadow removed from here, handled by .main-navigation-bar directly */
-    }
-
-    /* --- Mobile-specific styles for .nav-bar-content inside .container --- */
-    .main-navigation-bar .container .nav-bar-content {
-        /* .container handles width/padding/margin */
-        /* nav-bar-content just handles the flex layout inside */
-        display: flex; /* Ensure flex */
-        justify-content: space-between;
-        align-items: center;
-        width: 100%; /* Takes full width of the container */
-        /* No padding/margin/max-width needed here, handled by the parent .container */
-    }
-
-
-    .logo img {
-        height: 30px;
-    }
-
-    .nav-links {
-        /* Hide desktop links and set up mobile menu positioning */
-        display: none; /* Hidden by default */
-        flex-direction: column; /* Stack links vertically */
-        position: absolute; /* Position relative to the parent with position:relative (.main-navigation-bar) */
-        top: 100%; /* Position directly below the nav bar */
-        /* This needs to align with the left edge of the container */
-        /* We can align it to the left edge of the *window* and let its own padding handle alignment */
-        left: 0; /* Start from the left edge of the viewport */
-        width: 100%; /* Span the full width of the viewport */
-        background-color: white;
-        box-shadow: 0 5px 5px rgba(0,0,0,0.1);
-        z-index: 999;
-        /* Padding for the whole menu container */
-        /* Apply the container's left/right padding to the entire absolute menu */
-        padding: 10px var(--container-padding); /* Apply vertical and horizontal padding */
-    }
-    .nav-links.active {
-        display: flex; /* Show when active */
-         /* Ensure vertical padding when active */
-        padding: 10px var(--container-padding); /* Apply vertical and horizontal padding */
-    }
-    .nav-links li {
-        margin: 10px 0;
-        text-align: center;
-        /* No left/right padding needed on list items if padding is on the parent .nav-links */
-        padding: 0;
-    }
-     .nav-links a {
-         padding: 8px 0; /* Vertical padding on links */
-     }
+    
     .mobile-menu-toggle {
-        display: block; /* Show hamburger icon */
+        display: block;
     }
-    .mobile-menu-toggle.active span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-surface);
+        flex-direction: column;
+        padding: 20px var(--container-padding);
+        gap: 4px;
+        border-top: 1px solid var(--border-subtle);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     }
-    .mobile-menu-toggle.active span:nth-child(2) {
-        opacity: 0;
+    
+    .nav-links.active {
+        display: flex;
     }
-    .mobile-menu-toggle.active span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+    
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
     }
-
-    #hero h1 {
-        font-size: 3.5rem;
+    
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
-    #hero {
-        min-height: 300px;
-		max-height: 600px;
-    }
-
+    
     .what-we-do-grid {
         grid-template-columns: 1fr;
-        gap: 25px;
     }
-    .service-item {
-        padding: 15px;
-        border-bottom: 1px solid #eee;
-         border-radius: 0;
+    
+    .service-item.primary {
+        grid-column: span 1;
     }
-    .service-item:last-child {
-        border-bottom: none;
+    
+    .lifecycle-card {
+        flex: 1 1 100%;
     }
-
-    .carousel-slide {
-        min-width: 100%;
-        padding: 0 10px;
+    
+    .contact-grid {
+        gap: 40px;
     }
-    .carousel-slide img {
-        max-width: 200px; /* This was increased in the last step */
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
     }
-     .carousel-container {
-         padding: 0 20px;
-     }
-     .carousel-button {
-        width: 30px;
-        height: 30px;
-        font-size: 0.9rem;
-     }
+    
+    .contact-details-container {
+        flex-direction: column;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 30px;
+    }
 }
 
 @media (max-width: 480px) {
-     :root {
-          --container-padding: 10px; /* Slightly less padding on very small screens */
-     }
-     body {
-         /* Header height might need adjustment if nav bar height changes further */
-     }
-
-     #hero h1 {
-         font-size: 2.5rem;
-         padding: 0 10px;
-     }
-    #hero {
-        min-height: 250px;
+    .stats-grid {
+        grid-template-columns: 1fr;
     }
-
-     .contact-form-container, .contact-details-container {
-         padding: 0 10px;
-     }
-
-     .contact-detail-item .icon-fa {
-         font-size: 20px;
-         width: 25px;
-         margin-right: 0;
-         margin-bottom: 5px;
-     }
-      .contact-detail-item strong {
-          font-size: 1.1em;
-      }
-     .contact-detail-item p {
-         font-size: 1em;
-     }
-
-     /* Adjust button padding on very small screens */
-     #contact .btn {
-         padding: 10px 20px;
-     }
-
-     /* Adjust carousel image size on very small screens */
-     .carousel-slide img {
-         max-width: 150px;
-     }
-      .carousel-container {
-          padding: 0 15px; /* Adjust carousel container padding */
-      }
-       .carousel-button {
-          width: 25px;
-          height: 25px;
-          font-size: 0.8rem;
-       }
+    
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+    }
 }
