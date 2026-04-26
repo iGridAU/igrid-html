@@ -3,40 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iGrid | Sustainability Experts</title>
+    <title>iGrid | Battery Energy Storage Systems (BESS) & Grid Solutions</title>
     <link rel="icon" href="image/cropped-battery.icon_.circle.png" type="image/png">
-    <!-- Add Open Sans font -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Share+Tech&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts: Space Grotesk + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <!-- Header -->
     <header id="main-header">
-        <!-- Top Blue Bar with Contact Info -->
-        <div class="header-top-contact-bar">
-            <div class="container">
-                <div class="contact-info">
-                    <a href="tel:(02)83130430"><i class="fas fa-phone icon-fa"></i> (02) 8313 0430</a>
-                    <a href="mailto:contact@igrid.io"><i class="fas fa-envelope icon-fa"></i> contact@igrid.io</a>
-                </div>
-                <!-- Potentially other elements like social media icons could go here on the right -->
-            </div>
-        </div>
-        <!-- Main Navigation Bar (White) -->
         <nav class="main-navigation-bar">
-            <!-- ADDED the .container div back here -->
             <div class="container">
                 <div class="nav-bar-content">
                     <a href="https://igrid.io/" class="logo">
                         <img src="image/IGRID_Transparent.webp" alt="iGrid Logo">
                     </a>
                     <ul class="nav-links">
-                        <li><a href="https://igrid.io/">Home</a></li>
-                        <li><a href="https://grafana.igrid.io/login" target="_blank">IoT Portal</a></li>
-                        <li><a href="https://files.igrid.io/" target="_blank">Files</a></li>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#bess-lifecycle">BESS</a></li>
+                        <li><a href="#what-we-do">Services</a></li>
+                        <li><a href="#customers">Customers</a></li>
                         <li><a href="#contact">Contact</a></li>
+                        <li><a href="https://grafana.igrid.io/login" target="_blank" class="nav-cta">IoT Portal</a></li>
                     </ul>
                     <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
                         <span></span>
@@ -45,136 +37,295 @@
                     </button>
                 </div>
             </div>
-            <!-- /ADDED the .container div back here -->
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section id="hero">
+        <div class="hero-bg"></div>
         <div class="hero-content">
-            <h1>Your In House</h1>
-			<h1><span id="rotating-text">24/7 Support Team.</span></h1>
+            <p class="hero-subtitle reveal">Battery Energy Storage Systems</p>
+            <h1 class="reveal">Your In House</h1>
+            <h1 class="reveal"><span id="rotating-text">Energy Storage Experts.</span></h1>
+            <div class="hero-cta reveal">
+                <a href="#bess-lifecycle" class="btn btn-primary">Explore Our Capability</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Stats Band -->
+    <section id="stats" class="section-padding">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-target="50" data-suffix="+">0</div>
+                    <div class="stat-label">Systems Delivered</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-target="1" data-suffix="GWh+">0</div>
+                    <div class="stat-label">Capacity Delivered</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-target="24" data-suffix="/7">0</div>
+                    <div class="stat-label">Operations Support</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-target="100" data-suffix="%">0</div>
+                    <div class="stat-label">Australia Wide</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BESS Lifecycle -->
+    <section id="bess-lifecycle" class="section-padding">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">End-to-End Capability</span>
+                <h2>The BESS Lifecycle</h2>
+                <p>From initial concept through to long-term asset optimisation, we partner with you at every stage of your energy storage journey.</p>
+            </div>
+            <div class="lifecycle-grid">
+                <div class="lifecycle-card reveal">
+                    <div class="lifecycle-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Design</h3>
+                    <p>System architecture, grid connection studies, and feasibility analysis tailored to your site constraints and market strategy.</p>
+                </div>
+                <div class="lifecycle-arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="lifecycle-card reveal">
+                    <div class="lifecycle-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Procure</h3>
+                    <p>Vendor selection, supply chain management, and commercial negotiation to secure best-in-class battery technology.</p>
+                </div>
+                <div class="lifecycle-arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="lifecycle-card reveal">
+                    <div class="lifecycle-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Install</h3>
+                    <p>End-to-end construction management, civil works, and mechanical & electrical integration on site.</p>
+                </div>
+                <div class="lifecycle-arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="lifecycle-card reveal">
+                    <div class="lifecycle-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3>Commission</h3>
+                    <p>Testing, energisation, and grid compliance to ensure your asset is market-ready and fully certified.</p>
+                </div>
+                <div class="lifecycle-arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="lifecycle-card reveal">
+                    <div class="lifecycle-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Monitor & Maintain</h3>
+                    <p>Real-time SCADA and IoT monitoring, preventive maintenance, and rapid-response corrective works.</p>
+                </div>
+                <div class="lifecycle-arrow"><i class="fas fa-chevron-right"></i></div>
+                <div class="lifecycle-card reveal">
+                    <div class="lifecycle-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Optimize</h3>
+                    <p>Data-driven performance tuning, warranty management, and revenue optimisation across energy markets.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- What We Do Section -->
     <section id="what-we-do" class="section-padding">
         <div class="container">
-            <h2>WHAT WE DO</h2>
+            <div class="section-header reveal">
+                <span class="section-tag">Our Expertise</span>
+                <h2>What We Do</h2>
+                <p>Integrated solutions for the modern energy grid.</p>
+            </div>
             <div class="what-we-do-grid">
-                <div class="service-item">
-                    <img src="image/sustainability.64px.png" alt="Sustainability Consulting">
-                    <p>Sustainability Consulting</p>
+                <div class="service-item primary reveal">
+                    <div class="service-icon-wrap">
+                        <img src="image/energystorage.64px.png" alt="Energy Storage">
+                    </div>
+                    <h3>Energy Storage</h3>
+                    <p>Grid-scale and commercial BESS design, delivery, and optimisation.</p>
                 </div>
-                <div class="service-item">
-                    <img src="image/energystorage.64px.png" alt="Energy Storage">
-                    <p>Energy Storage</p>
+                <div class="service-item reveal">
+                    <div class="service-icon-wrap">
+                        <img src="image/sustainability.64px.png" alt="Sustainability Consulting">
+                    </div>
+                    <h3>Sustainability Consulting</h3>
+                    <p>Strategic advice to decarbonise operations and meet net-zero targets.</p>
                 </div>
-                <div class="service-item">
-                    <img src="image/operations.64px.png" alt="Asset Management">
-                    <p>Asset Management</p>
+                <div class="service-item reveal">
+                    <div class="service-icon-wrap">
+                        <img src="image/operations.64px.png" alt="Asset Management">
+                    </div>
+                    <h3>Asset Management</h3>
+                    <p>Lifecycle asset stewardship maximising uptime and long-term returns.</p>
                 </div>
-                <div class="service-item">
-                    <img src="image/recycle.64px.png" alt="PV & Battery Recycling">
-                    <p>PV & Battery Recycling</p>
+                <div class="service-item reveal">
+                    <div class="service-icon-wrap">
+                        <img src="image/iot.64px.png" alt="Data Acquisition & IOT">
+                    </div>
+                    <h3>Data Acquisition & IoT</h3>
+                    <p>Real-time telemetry, cloud dashboards, and edge connectivity for critical infrastructure.</p>
                 </div>
-                <div class="service-item">
-                    <img src="image/iot.64px.png" alt="Data Acquisition & IOT">
-                    <p>Data Acquisition & IOT</p>
+                <div class="service-item reveal">
+                    <div class="service-icon-wrap">
+                        <img src="image/recycle.64px.png" alt="PV & Battery Recycling">
+                    </div>
+                    <h3>PV & Battery Recycling</h3>
+                    <p>End-of-life management and responsible recycling pathways for renewable assets.</p>
                 </div>
-                <div class="service-item">
-                    <img src="image/247.64px.png" alt="24/7 Operations Support">
-                    <p>24/7 Operations Support</p>
+                <div class="service-item reveal">
+                    <div class="service-icon-wrap">
+                        <img src="image/247.64px.png" alt="24/7 Operations Support">
+                    </div>
+                    <h3>24/7 Operations Support</h3>
+                    <p>Round-the-clock monitoring and incident response when it matters most.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Some of Our Customers Section -->
+    <!-- Trusted By / Customers -->
     <section id="customers" class="section-padding">
         <div class="container">
-            <h2>SOME OF OUR CUSTOMERS</h2>
-            <div class="carousel-container">
-                <button class="carousel-button prev" aria-label="Previous Customer">&lt;</button>
-                <div class="carousel-track-container">
-                    <div class="carousel-track">
-                        <div class="carousel-slide"><img src="image/clc.webp" alt="Climate Leaders Coalition"></div>
-                        <div class="carousel-slide"><img src="image/agl_logo_vertical_cmyk.webp" alt="AGL"></div>
-                        <div class="carousel-slide"><img src="image/suncable.webp" alt="Suncable"></div>
-                        <div class="carousel-slide"><img src="image/santos-137583-companylogo.webp" alt="Santos"></div>
-                        <div class="carousel-slide"><img src="image/Sun-Store-Aus-Logo.webp" alt="Sun Store Aus"></div>
-                        <!-- Add duplicates if needed for infinite loop effect with JS -->
-                    </div>
-                </div>
-                <button class="carousel-button next" aria-label="Next Customer">&gt;</button>
+            <div class="section-header reveal">
+                <span class="section-tag">Partners</span>
+                <h2>Trusted By Industry Leaders</h2>
             </div>
-            <div class="carousel-dots">
-                <!-- Dots will be generated by JS -->
+        </div>
+        <div class="marquee-container reveal">
+            <div class="marquee-track">
+                <!-- Logos duplicated for seamless loop -->
+                <div class="marquee-item"><img src="image/clc.webp" alt="Climate Leaders Coalition"></div>
+                <div class="marquee-item"><img src="image/agl_logo_vertical_cmyk.webp" alt="AGL"></div>
+                <div class="marquee-item"><img src="image/suncable.webp" alt="Suncable"></div>
+                <div class="marquee-item"><img src="image/santos-137583-companylogo.webp" alt="Santos"></div>
+                <div class="marquee-item"><img src="image/Sun-Store-Aus-Logo.webp" alt="Sun Store Aus"></div>
+                <div class="marquee-item"><img src="image/delterra.png" alt="Delterra"></div>
+                <!-- Duplicate set -->
+                <div class="marquee-item"><img src="image/clc.webp" alt="Climate Leaders Coalition"></div>
+                <div class="marquee-item"><img src="image/agl_logo_vertical_cmyk.webp" alt="AGL"></div>
+                <div class="marquee-item"><img src="image/suncable.webp" alt="Suncable"></div>
+                <div class="marquee-item"><img src="image/santos-137583-companylogo.webp" alt="Santos"></div>
+                <div class="marquee-item"><img src="image/Sun-Store-Aus-Logo.webp" alt="Sun Store Aus"></div>
+                <div class="marquee-item"><img src="image/delterra.png" alt="Delterra"></div>
             </div>
         </div>
     </section>
 
-    <!-- Get in Touch Section -->
+    <!-- Contact Section -->
     <section id="contact" class="section-padding">
         <div class="container contact-grid">
-            <div class="contact-form-container">
-                <h2>Get in touch:</h2>
+            <div class="contact-form-container reveal">
+                <span class="section-tag">Start a Project</span>
+                <h2>Get in Touch</h2>
+                <p class="contact-intro">Ready to explore how BESS can transform your energy strategy? Let's talk.</p>
                 <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-					<input type="hidden" id="key" name="access_key" value="fe7027e4-d54d-4a54-9b86-579a3fa1cf73">
-                    <div class="form-row"> <!-- Wrap name and email in a row -->
+                    <input type="hidden" id="key" name="access_key" value="fe7027e4-d54d-4a54-9b86-579a3fa1cf73">
+                    <div class="form-row">
                         <div class="form-group name-group">
                             <label for="name">Name</label>
-                            <div class="form-field-line"> <!-- Wrap input for the line -->
-                                <input type="text" id="name" name="name" required>
-                            </div>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
                         </div>
                         <div class="form-group email-group">
                             <label for="email">Email Address</label>
-                             <div class="form-field-line"> <!-- Wrap input for the line -->
-                                 <input type="email" id="email" name="email" required>
-                             </div>
+                            <input type="email" id="email" name="email" placeholder="you@company.com" required>
                         </div>
                     </div>
                     <div class="form-group message-group">
                         <label for="message">Message</label>
-                         <div class="form-field-line"> <!-- Wrap textarea for the line -->
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                         </div>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
                     </div>
-					<!-- Honeypot Spam Protection -->
-					<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-                    <button type="submit" class="btn">LET'S CHAT</button>
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
             </div>
-            <!-- Wrap contact details in a container -->
-            <div class="contact-details-container">
-				<div class="contact-detail-item">
-					<i class="fas fa-map-marker-alt icon-fa"></i>
-					<div> <!-- Wrap text content -->
-						<strong>Office</strong>
-						<p>Sydney, NSW, 2039</p>
-					</div>
-				</div>
-				<div class="contact-detail-item">
-					<i class="fas fa-phone icon-fa"></i>
-					<div> <!-- Wrap text content -->
-						<strong>Call Us</strong>
-						<p>(02) 8313 0430</p>
-					</div>
-				</div>
+            <div class="contact-details-container reveal">
+                <div class="contact-detail-item">
+                    <div class="contact-icon-wrap">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <strong>Office</strong>
+                        <p>Sydney, NSW, 2039</p>
+                    </div>
+                </div>
+                <div class="contact-detail-item">
+                    <div class="contact-icon-wrap">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <strong>Call Us</strong>
+                        <p>(02) 8313 0430</p>
+                    </div>
+                </div>
+                <div class="contact-detail-item">
+                    <div class="contact-icon-wrap">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <strong>Email</strong>
+                        <p>contact@igrid.io</p>
+                    </div>
+                </div>
+                <div class="contact-detail-item">
+                    <div class="contact-icon-wrap">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <strong>Support</strong>
+                        <p>24/7 Operations</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2025 iGrid Pty Ltd. All rights reserved.</p>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="image/IGRID_Transparent.webp" alt="iGrid Logo" class="footer-logo">
+                <p>Energy storage experts powering Australia's transition to renewable energy.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Navigate</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#bess-lifecycle">BESS</a></li>
+                        <li><a href="#what-we-do">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="https://grafana.igrid.io/login" target="_blank">IoT Portal</a></li>
+                        <li><a href="https://files.igrid.io/" target="_blank">Files</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="year"></span> iGrid Pty Ltd. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
-    <script data-goatcounter="https://igrid.goatcounter.com/count"
-	    async src="//gc.zgo.at/count.js"></script>
+    <script data-goatcounter="https://igrid.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
