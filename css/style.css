@@ -810,6 +810,15 @@ footer {
     .section-padding {
         padding: 60px 0;
     }
+
+    #hero h1 {
+        font-size: clamp(1.8rem, 6vw, 2.8rem);
+    }
+
+    .hero-subtitle {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+    }
     
     .mobile-menu-toggle {
         display: block;
@@ -876,6 +885,10 @@ footer {
 }
 
 @media (max-width: 480px) {
+    #hero h1 {
+        font-size: clamp(1.5rem, 7.5vw, 2rem);
+    }
+
     .stats-grid {
         grid-template-columns: 1fr;
     }
